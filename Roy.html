@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona Carmen Denia National High School</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0f0f0f; /* Dark background to match coding/tech theme */
+            background-image: url('rr.png'); /* Replace with your own coding-related background image */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Ensure text is visible over the dark background */
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #6a2e8c;
+            padding: 15px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d5a6f0;
+        }
+
+        nav:hover {
+            background-color: #4b1b6a;
+        }
+
+        /* Header Section */
+        header {
+            background-color: rgba(142, 68, 173, 0.8); /* semi-transparent background */
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px; /* Offset navbar */
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s; /* Fade-in with delay */
+        }
+
+        header h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            background-color: rgba(243, 229, 245, 0.9); /* Light background with transparency */
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2s; /* Fade-in with delay */
+        }
+
+        .about h2 {
+            font-size: 40px;
+            color: #6a2e8c;
+        }
+
+        .about p {
+            font-size: 18px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        /* Robot Dinosaur Image on the sides */
+        .dinosaur {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+            animation: dinosaurMovement 3s infinite alternate;
+        }
+
+        .left-dinosaur {
+            left: 0;
+            width: 35%;
+        }
+
+        .right-dinosaur {
+            right: 0;
+            width: 35%;
+        }
+
+        @keyframes dinosaurMovement {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(15deg); }
+        }
+
+        /* Computer Image with Wiring Effects */
+        .computer-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            text-align: center;
+            animation: fadeIn 2s forwards 3s; /* Fade-in with delay */
+        }
+
+        .computer-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Colorful wiring effect */
+        .wires {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wire {
+            position: absolute;
+            width: 3px;
+            height: 200px;
+            background-color: #fff;
+            opacity: 0;
+            animation: wire-animation 2s infinite;
+        }
+
+        .wire:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+            background-color: #ff0000;
+        }
+
+        .wire:nth-child(2) {
+            top: 30%;
+            left: 50%;
+            animation-delay: 0.5s;
+            background-color: #00ff00;
+        }
+
+        .wire:nth-child(3) {
+            top: 50%;
+            left: 70%;
+            animation-delay: 1s;
+            background-color: #0000ff;
+        }
+
+        @keyframes wire-animation {
+            0% { opacity: 0; transform: scaleY(0.1); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+            100% { opacity: 0; transform: scaleY(0.1); }
+        }
+
+        /* ICT Students Image Section */
+        .ict-section {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards 4s; /* Fade-in with delay */
+        }
+
+        .ict-section img {
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .ict-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #6a2e8c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s forwards 5s; /* Fade-in with delay */
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #d5a6f0;
+        }
+
+        footer:hover {
+            background-color: #4b1b6a;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#ict-students">ICT Students</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Dinosaur Images -->
+    <img src="s.png" class="dinosaur left-dinosaur" alt="Robot Dinosaur Left">
+    <img src="a.png" class="dinosaur right-dinosaur" alt="Robot Dinosaur Right">
+
+    <!-- Header Section -->
+    <header>
+        <h1>Dona Carmen Denia National High School</h1>
+        <p>Empowering Future Leaders Through Education and Technology</p>
+    </header> 
+
+    <!-- Computer Image with Wiring Effects -->
+    <section class="computer-container">
+        <img src="3.png" alt="Computer with Wiring Effects">
+        <div class="wires">
+            
+            
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Dona Carmen Denia National High School, where excellence in education meets innovation for a brighter future. Our school is dedicated to fostering academic success, integrating cutting-edge technology, and nurturing strong character development. We empower our students with the skills, knowledge, and values needed to thrive in an ever-evolving world. By cultivating leadership, critical thinking, and a deep sense of responsibility, we prepare our students to make meaningful contributions to their communities and become visionary leaders who will shape the future on a global scale.</p>
+        <img src="KUPAL.png" alt="Dona Carmen Denia National High School">
+    </section>
+
+    <!-- ICT Students Section -->
+    <section id="ict-students" class="ict-section">
+        <h2>ICT Students at Dona Carmen Denia National High School</h2>
+        <p>Information and Communications Technology (ICT) plays a crucial role in national development by driving economic growth, enhancing education, and improving healthcare. It helps businesses become more efficient and reach global markets, creating jobs and supporting economic progress. In education, ICT provides students and teachers with access to online resources and tools that enhance learning and skill development. In healthcare, ICT enables telemedicine, digital records, and better healthcare management, improving care quality and accessibility. It also connects people across distances, facilitating communication in both personal and professional contexts. Moreover, ICT drives innovation, enabling new technologies like AI and IoT while fostering entrepreneurship. Additionally, it helps bridge the digital divide by providing marginalized communities with access to education, information, and opportunities. Overall, ICT is essential for economic, social, and technological progress, playing a central role in modern nation-building.</p>
+        <img src="f.png" alt="ICT Students of Dona Carmen Denia National High School">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dona Carmen Denia National High School | All Rights Reserved</p>
+        <p>
+            <a href="#privacy-policy">Privacy Policy</a> | 
+            <a href="#terms-of-service">Terms of Service</a> | 
+            <a href="#social-media">Follow Us</a>
+        </p>
+    </footer>
+
+</body>
+</html>
